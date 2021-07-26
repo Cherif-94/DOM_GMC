@@ -2,19 +2,17 @@
 let btn = document.querySelectorAll(".btn_plus");
 // importer la quantitè 
 let quantity = document.querySelectorAll(".qte");
+console.log(quantity)
 // importer le boutton (-)
 let btn2 = document.querySelectorAll(".btn_moin");
 // importer le prix 
 let prix = document.querySelectorAll(".prix") ;
-// console.log("hello it is a " , price)
+//  importer le container
 let container = document.querySelectorAll(".container") ; 
-// console.log("this is a " , container) ; 
+// importer le button remove
 let remove = document.querySelectorAll(".fas fa-trash") ; 
-// console.log("remove test " , remove);
 
 let like = document.querySelectorAll(".far fa-heart") ;
-// console.log("like);
-let heart = document.querySelectorAll(".heart") ;
 
 let total = document.getElementById("totalPrice") ;
 
@@ -40,16 +38,24 @@ for (let i = 0; i <= btn2.length - 1; i++) {
   });
 } 
 
-// ................... traitement totalPrice
+//  traitement totalPrice
 
-    // for(i=0 ; i<=btn.length-1 ; i ++) {
-    //       btn[i].addEventListener("click", function(){
-    //            total[i].innerHTML++
+    for(i=0 ; i<=btn.length-1 ; i ++) {
+      
+          btn[i].addEventListener("click", function(){
+               total.innerHTML= quantity[i].innerHTML * 450;
 
-    //       })
-    // }
+          }) 
+    }
+        for(i=0 ; i<=btn2.length-1 ; i ++) {
+      
+          btn2[i].addEventListener("click", function(){
+            if(total.innerHTML>0){
+               total.innerHTML= total.innerHTML - 450;
+            }
 
-
+          })
+    }
 
 // .........traitement remove container 
 for (i = 0 ; i<=remove.length - 1; i++)
@@ -61,13 +67,15 @@ for (i = 0 ; i<=remove.length - 1; i++)
 
 // ..........change color of icon like 
 
-for (i = 0 ; i<=heart.length - 1 ; i++ ) {
-      heart[i].addEventListener("click" , function() {
-              if(heart[i].style.color =="black"){
-      heart[i].style.color=="red" ; 
-}else{
-heart[i].style.color="red"
-}
+// for (i = 0 ; i<=heart.length - 1 ; i++ ) {
+//       heart[i].addEventListener("click" , function() {
+//               if(heart[i].style.color =="black"){
+//       heart[i].style.color=="red" ; 
+// }else{
+// heart[i].style.color="red"
+// }
       
-}); 
-}
+// }); 
+// }
+
+
